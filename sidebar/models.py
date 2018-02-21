@@ -21,7 +21,7 @@ class Sidebar(models.Model):
 
 class SidebarWidget(models.Model):
     title = models.CharField(max_length=150)
-    sidebar = models.ForeignKey(Sidebar)
+    sidebar = models.ForeignKey(Sidebar,on_delete=models.CASCADE,)
     widget = models.CharField(max_length=50)
     content = models.TextField(blank=True, null=True)
     order = models.IntegerField(blank=True, null=True, default=100)
